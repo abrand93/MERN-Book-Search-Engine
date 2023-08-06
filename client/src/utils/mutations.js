@@ -26,11 +26,7 @@ mutation Mutation($username: String!, $email: String!, $password: String!) {
   
 
 `
-export const SAVE_BOOK = gql `
 
-
-
-`
 export const REMOVE_BOOK = gql `
 
 mutation Mutation($userId: ID!, $bookId: String!) {

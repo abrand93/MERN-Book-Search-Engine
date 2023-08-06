@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {AppolloClinet, InMemoryCache, ApolloProvider} from '@apollo/client'
+import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client'
 import SearchBooks from './pages/SearchBooks'
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 
-const client = new AppolloClinet({
+const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
 })
