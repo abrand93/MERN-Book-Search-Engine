@@ -8,20 +8,20 @@ import {
 } from 'react-bootstrap';
 import { useQuery, useMutation } from '@apollo/client';
 import { REMOVE_BOOK } from '../utils/mutations';
+
 import { GET_ME } from '../utils/queries';
-
-
 
 // import { getMe, deleteBook } from '../utils/API';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-const {loading, data} = useQuery(GET_ME)
-const [removeBook, { error }] = useMutation(REMOVE_BOOK)
+  const { loading, data } = useQuery(GET_ME);
+const [removeBook] = useMutation(REMOVE_BOOK)
 
 const userData = data?.me || [];
 
+console.log(userData.savedBooks)
 
  
 
@@ -62,6 +62,7 @@ const userData = data?.me || [];
       </div>
       <Container>
         <h2 className='pt-5'>
+       
           {userData.savedBooks.length
             ? `Viewing ${userData.savedBooks.length} saved ${userData.savedBooks.length === 1 ? 'book' : 'books'}:`
             : 'You have no saved books!'}
@@ -91,3 +92,4 @@ const userData = data?.me || [];
 };
 
 export default SavedBooks;
+// userData.savedBooks.length
