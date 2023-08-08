@@ -29,6 +29,7 @@ const { authMiddleware } = require('./utils/auth');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/googlebooks');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
